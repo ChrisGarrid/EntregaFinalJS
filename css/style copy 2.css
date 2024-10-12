@@ -1,0 +1,441 @@
+/* Estilos generales */
+body {
+    font-family: 'KouzanBrush', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b; /* Fondo Principal */
+    color: #e0e0e0; /* Texto Principal */
+}
+
+/* Estilo para el header */
+header {
+    background-color: #2c2c2c; /* Fondo de Header */
+    text-align: center;
+    padding: 20px;
+    background-image: url("anago1.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#foreground-image {
+    width: 150px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideIn 1.5s ease-out forwards 1s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#restaurant-image {
+    display: none; /* Ocultar la imagen del restaurante */
+}
+
+/* Estilo para los encabezados h2 */
+h2 {
+    text-align: center; /* Centra el texto del encabezado h2 */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo para el menú de navegación */
+nav {
+    background-color: #333; /* Fondo gris oscuro para el nav */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los elementos de la lista horizontalmente */
+    justify-content: center; /* Centra los elementos en el contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+}
+
+nav ul li {
+    position: relative; /* Necesario para el menú desplegable */
+    margin: 5px; /* Espacio entre los elementos */
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #e0e0e0; /* Texto Principal */
+    background-color: #555;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #d2691e; /* Fondo de Botones y Links Hover */
+    box-shadow: 0 0 10px #d4af37, 0 0 20px #ff3300, 0 0 30px #ff6600; /* Sombra dorada y cálida */
+}
+
+/* Estilo para el menú desplegable */
+nav ul li ul.dropdown {
+    display: none; /* Oculta el menú desplegable por defecto */
+    position: absolute; /* Posiciona el menú desplegable */
+    top: 100%; /* Alinea el menú desplegable justo debajo del elemento principal */
+    left: 0;
+    background-color: #333; /* Fondo gris oscuro para el menú desplegable */
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li:hover ul.dropdown {
+    display: block; /* Muestra el menú desplegable al pasar el ratón */
+}
+
+nav ul li ul.dropdown li {
+    margin: 0;
+}
+
+nav ul li ul.dropdown li a {
+    padding: 10px 20px; /* Espacio dentro de los recuadros del menú desplegable */
+    border-radius: 0; /* Sin bordes redondeados para los elementos del menú desplegable */
+}
+
+nav ul li ul.dropdown li a:hover {
+    background-color: #777; /* Color de fondo al pasar el ratón en el menú desplegable */
+}
+
+/* Estilo para las secciones de introducción */
+.introduccion {
+    padding: 20px;
+    background: linear-gradient(135deg, #2c2c2c, #1b1b1b, #555); /* Degradado más oscuro */
+    border: 2px solid #d4af37; /* Borde dorado */
+    margin: 20px;
+    color: #e0e0e0; /* Texto Principal */
+    background-image: url(angagoentrada.png);
+    background-size: cover;
+}
+
+.introduccion h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.introduccion p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.introduccion ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    text-align: center;
+}
+
+.introduccion ul li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+}
+
+/* Estilo para las secciones de platillos */
+.dish {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    flex-direction: column; /* Coloca imagen y texto en columna por defecto */
+    text-align: center; /* Centra el texto */
+    background: linear-gradient(135deg, #2c2c2c, #1b1b1b, #555); /* Degradado más oscuro */
+    border: 2px solid #d4af37; /* Borde dorado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.dish img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dish img:hover {
+    transform: scale(1.1);
+}
+
+.dish p {
+    margin: 0;
+    flex: 1; /* Ocupa el espacio restante al lado de la imagen */
+    color: #e0e0e0; /* Texto Principal */
+}
+
+/* bestdish */
+/* Estilo para centrar la sección y agregarle un borde con degradado */
+.bestdish {
+    margin: 50px auto; /* Centra la sección horizontalmente y añade margen superior/inferior */
+    width: 95%; /* Ajusta el ancho para que cubra más espacio lateral */
+    height: 450px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 10px;
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+/* Imágenes de la sección bestdish */
+.bestdish img {
+    width: 15%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all ease-in-out 0.5s;
+}
+
+.bestdish img:hover {
+    width: 30%;
+    box-shadow: 0 0 10px #A67B5B; /* Sombra marrón suave alrededor de la imagen al hacer hover */
+}
+
+/* Estilo para la sección de contacto */
+.contacto {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    gap: 20px; /* Espacio entre los elementos */
+    margin: 20px;
+}
+
+.mapa {
+    flex: 1; /* Toma el espacio disponible */
+    max-width: 100%; /* Asegura que el mapa no se desborde del contenedor */
+}
+
+.mapa iframe {
+    width: 100%; /* Ajusta al tamaño del contenedor */
+    height: 300px;
+    border: 0;
+}
+
+.redes-sociales {
+    flex: 1; /* Toma el espacio disponible */
+    max-width: 100%; /* Asegura que la sección de redes sociales no se desborde del contenedor */
+}
+
+.redes-sociales h2 {
+    margin-top: 0;
+}
+
+.redes-sociales a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #333; /* Color del texto */
+    display: block; /* Hace que los enlaces ocupen toda la anchura del contenedor */
+    margin-bottom: 10px; /* Espacio entre los enlaces */
+    padding: 5px 0; /* Espacio dentro de los enlaces */
+}
+
+.redes-sociales a:hover {
+    color: #007BFF; /* Color al pasar el ratón */
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #2c2c2c; /* Fondo del footer */
+    color: #e0e0e0; /* Texto del footer */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilos generales para la sección de reservas */
+.reserva {
+    padding: 40px;
+    background: linear-gradient(135deg, #2c2c2c, #1b1b1b, #555);
+    color: #e0e0e0;
+    border: 2px solid #d4af37; /* Borde dorado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.reserva h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #d4af37; /* Dorado para los encabezados */
+}
+
+.reserva label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+.reserva input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.reserva button {
+    padding: 12px 20px;
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s;
+}
+
+.reserva button:hover {
+    background-color: #ff6600;
+    box-shadow: 0 0 10px #d4af37, 0 0 20px #ff3300, 0 0 30px #ff6600;
+}
+
+/* Estilo para la lista de reservas */
+.reservation-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Botones en el mensaje de confirmación */
+#confirmationMessage button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #2f4f4f;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#confirmationMessage button:hover {
+    background-color: #ff3300;
+    box-shadow: 0 0 10px #d4af37, 0 0 20px #ff3300, 0 0 30px #ff6600;
+}
+
+/* Media Queries para hacer la sección responsive */
+
+/* Pantallas de teléfono */
+@media (max-width: 600px) {
+    .reserva {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .reserva h2 {
+        font-size: 1.5em;
+    }
+
+    .reserva input {
+        font-size: 0.9em;
+    }
+
+    .reserva button {
+        font-size: 1em;
+    }
+}
+
+/* Pantallas de tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .reserva {
+        padding: 25px;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+    .reserva h2 {
+        font-size: 1.8em;
+    }
+
+    .reserva input {
+        font-size: 1.1em;
+    }
+
+    .reserva button {
+        font-size: 1.2em;
+    }
+}
+
+/* Pantallas de escritorio */
+@media (min-width: 1025px) {
+    .reserva {
+        padding: 40px;
+        margin: 40px auto;
+        max-width: 700px;
+    }
+
+    .reserva h2 {
+        font-size: 2.2em;
+    }
+
+    .reserva input {
+        font-size: 1.2em;
+    }
+
+    .reserva button {
+        font-size: 1.4em;
+    }
+}
+
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+}
+/* Ajustes para tamaños de pantalla */
+@media (max-width: 768px) {
+    header {
+        height: 200px; /* Reduce la altura del header en pantallas pequeñas */
+        padding: 10px;
+    }
+
+    #foreground-image {
+        width: 100px; /* Ajusta el tamaño del logotipo en pantallas pequeñas */
+    }
+
+    .dish {
+        flex-direction: column; /* Coloca la imagen y el texto en columna por defecto */
+    }
+
+    .bestdish {
+        flex-direction: column; /* Coloca las imágenes en columna por defecto */
+    }
+
+    .bestdish img {
+        width: 100%; /* Ajusta el tamaño de las imágenes en pantallas pequeñas */
+    }
+
+    .contacto {
+        flex-direction: column; /* Coloca el mapa y las redes sociales en columna por defecto */
+    }
+}
+
+@media (max-width: 480px) {
+    .bestdish {
+        flex-direction: column; /* Coloca las imágenes en columna por defecto */
+        padding: 10px; /* Ajusta el espaciado interno */
+    }
+
+    .bestdish img {
+        width: 100%; /* Ajusta el tamaño de las imágenes para pantallas muy pequeñas */
+    }
+
+    .mapa iframe {
+        height: 200px; /* Ajusta la altura del mapa para pantallas pequeñas */
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Izakaya</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="Assets/torii.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+</head>
+<body>
+    <!-- Header con opciones de navegación -->
+    <header>
+        <img src="Images/ANAGO.png" alt="Logo del Restaurante" id="foreground-image">
+    </header>
+    
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="index.html" class="logo">Restaurante</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal para las reservas -->
+    <section id="reservas" class="reserva">
+        <h2>Reserva tu Mesa</h2>
+        <div id="reservationForm" class="form-group">
+            <label for="clientName">Nombre del Cliente:</label>
+            <input type="text" id="clientName" required>
+    
+            <label for="numOfGuests">Número de Invitados:</label>
+            <input type="number" id="numOfGuests" required>
+    
+            <label for="time">Hora de la Reserva:</label>
+            <input type="time" id="time" required>
+    
+            <button onclick="addReservation()">Agregar Reserva</button>
+        </div>
+    
+        <div id="menuForm" class="form-group" style="display:none;">
+            <h2>Selecciona tu Menú</h2>
+            <p id="dishLimitMessage">Selecciona los platos (máximo: <span id="maxDishes"></span> platos):</p>
+            <div id="dishOptions">
+                <!-- Opciones del menú cargadas dinámicamente -->
+            </div>
+            <button id="confirmOrderBtn" onclick="addMenu()" disabled>Confirmar Pedido</button>
+        </div>
+    
+        <div id="selectedDishes" class="form-group">
+            <!-- Imágenes de los platos seleccionados se mostrarán aquí -->
+        </div>
+    
+        <div id="confirmationMessage" class="form-group" style="display:none;">
+            <h2>Reserva Añadida Exitosamente</h2>
+            <p id="confirmationText"></p>
+            <button onclick="newReservation()">Realizar Otra Reserva</button>
+            <button onclick="acceptReservation()">Aceptar</button>
+        </div>
+    
+        <button onclick="showReservations()">Mostrar Reservas</button>
+        <div id="reservationList" class="reservation-list"></div>
+    </section>
+
+    <!-- Sección de ubicación -->
+    <section id="ubicacion" class="contacto">
+        <div class="mapa">
+            <h2>Encuéntranos Aquí</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.179165520399!2d-71.7337133632417!3d-35.59417380569633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9641bc8e5cf5a4a1%3A0x9d3d061d78a86f7f!2sUbicación%20deseada!5e0!3m2!1ses!2sus!4v1638259389564!5m2!1ses!2sus"
+                width="300"
+                height="300"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+        <div id="contacto" class="redes-sociales">
+            <h2>Síguenos</h2>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Anago Izakaya. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
